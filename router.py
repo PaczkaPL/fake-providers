@@ -17,8 +17,7 @@ def poczta_polska():
 
 @app.route('/pocztapolska/wssClient.php', methods = ['POST'])
 def wss_client():
-    print(request.args.get('n'))
-    if request.args.get('n') == "003123123123123543231234" and request.args.get('s') == "EawU66qiWz2lNIRzF9qQ==":
+    if request.form.get('n') == "003123123123123543231234" and request.form.get('s') == "EawU66qiWz2lNIRzF9qQ==":
         return render_template('poczta.html')
     else:
         return "Null"
